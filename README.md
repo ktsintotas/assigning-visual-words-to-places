@@ -23,8 +23,8 @@ If you use this code, please cite:
   author={K. A. Tsintotas and L. Bampis and A. Gasteratos},   
   booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
   pages={1 - 7},
-  year={2019},   
-  month={April}, 
+  year={2018},   
+  month={May}, 
   doi={10.1109/ICRA.2018.8461146} 
 }
 ```
