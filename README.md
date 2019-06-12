@@ -18,7 +18,7 @@ If you use this code, please cite:
 
 ```
 @inproceedings{tsintotas2018places,
-  title={Probabilistic Appearance-Based Place Recognition Through Bag of Tracked Words},  
+  title={Assigning Visual Words to Places for Loop Closure Detection},  
   author={K. A. Tsintotas and L. Bampis and A. Gasteratos},   
   booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
   pages={1 - 7},
