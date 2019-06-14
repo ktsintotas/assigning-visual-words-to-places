@@ -28,12 +28,12 @@ function params = parametersInitialization(frameRate)
     params.GNG.epsilon = 1; % Growing Neural Gas iterations
     
     % Method's general parameters
-    params.xi = 5; % Minimum detected local features per image, ?    
-    params.v = 300; % Maximum prominent local features per image, ?    
-    params.timeConstant = 40 * frameRate; % Search area time constant, ?    
-    params.verificationInliers = 12; % Geometrical verification inliers, ?     
-    params.temporalConsistency = 2; % Images’ temporal consistency, ?     
-    params.probabilityThreshold = 1e-12; % Probability score threshold, ? 
+    params.xi = 5; % Minimum detected local features per image
+    params.v = 300; % Maximum prominent local features per image
+    params.timeConstant = 40 * frameRate; % Search area time constant   
+    params.verificationInliers = 12; % Geometrical verification inliers 
+    params.temporalConsistency = 2; % Images’ temporal consistency    
+    params.probabilityThreshold = 1e-12; % Probability score threshold 
 
     params.myData.load = true;
     params.myData.save = true;

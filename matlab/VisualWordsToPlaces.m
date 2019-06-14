@@ -22,7 +22,7 @@ function VWtoPlaces = VisualWordsToPlaces(myData, params)
     else
         imageCounter = 0; % number of images belonging in a sequence
         sequenceCounter = 1; % initialization of sequence counter
-        imageToSequence = [];
+        imageToSequence = []; 
         featuresCollection = [];
         featuresDatabaseTemp = [];
         featuresIndex = [];

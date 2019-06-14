@@ -21,7 +21,6 @@ function placeMatches = queryingPlaces(temporalConstant, frameRate, myData, VWto
         load('results/placeMatches.mat');
     else
 
-
         searchDatabaseDefinition = 0;
         binomialMatrix = zeros(myData.imagesLoaded, size(VWtoPlaces.vwToPlaces, 2));
         loopClosureMatrixImageToImage = false(myData.imagesLoaded, myData.imagesLoaded);

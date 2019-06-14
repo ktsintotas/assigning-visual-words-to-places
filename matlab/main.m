@@ -16,8 +16,8 @@
 % MIT License for more details. <https://opensource.org/licenses/MIT>
 
 clear all; close all;
-
-dataPath = ('dataset_directory\'); % images' directory
+dataPath = ('C:\Users\Konstantinos\OneDrive - Democritus University of Thrace\PhD Documents\13-Datasets\KITTI\data_odometry_gray\sequences\05\image_1\'); 
+%dataPath = ('dataset_directory\'); % images' directory
 dataFormat = '*.png'; % e.g., for png input data
 dataFrameRate = 10; % dataset frame rate declaration
 temporalConstant = 40; % search area time constant, 40 secs
