@@ -23,7 +23,6 @@ function myData = extractMyData(params, dataPath, dataFormat)
     if params.myData.load == true && exist('results/myData.mat', 'file')    
         load('results/myData.mat');                
     else       
-        % replace the '*.png' format with the correspondinf format of your dataset
         images = dir([dataPath dataFormat]  );
         % fields to be removed from images' structure
         fields = {'folder','date','bytes','isdir','datenum'};    
@@ -55,7 +54,7 @@ function myData = extractMyData(params, dataPath, dataFormat)
         myData.imagesLoaded = imagesLoaded;
         myData.features = features;
         myData.points = points;        
-        myData.indexVector = indexVector;    
+        myData.indexVector = indexVector;   
         
         if params.myData.save
             save('results/myData', 'myData');
