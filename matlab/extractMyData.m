@@ -50,12 +50,12 @@ function myData = extractMyData(params, dataPath, dataFormat)
         % Clear variable space
         clear vars dataPath i fields tempIndexVector
         
-        myData.features = features;
         myData.images = images;
-        myData.imagesLoaded = imagesLoaded;
-        myData.indexVector = indexVector;
         myData.inputImage = inputImage;
-        myData.points = points;
+        myData.imagesLoaded = imagesLoaded;
+        myData.features = features;
+        myData.points = points;        
+        myData.indexVector = indexVector;    
         
         if params.myData.save
             save('results/myData', 'myData');
