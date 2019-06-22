@@ -53,7 +53,7 @@ function placeMatches = queryingPlaces(temporalConstant, frameRate, myData, VWto
             % find the minimum probability score
             [minProbability, minIndex] = min(binomialMatrix(i, 1 : searchDatabaseDefinition));
             % check if the candidate place is under the pre-defined threshold
-            if minProbability <= params.probabilityThreshold
+            if minProbability <= params.probabilityThreshold && placeVotes > E_x
                 % IMAGE TO IMAGE ASSOCIATION 
                 mdl2 = ExhaustiveSearcher(VWtoPlaces.placeDescriptors{minIndex});
                 IdxNN2 = knnsearch(mdl2,  myData.features{i}, 'K', 1);
@@ -72,15 +72,12 @@ function placeMatches = queryingPlaces(temporalConstant, frameRate, myData, VWto
                 try
                     [~, inliersIndex, ~] = estimateFundamentalMatrix(matchedPoints1, matchedPoints2, 'Method', 'RANSAC', 'DistanceThreshold', 1);
                     numInliers = sum(inliersIndex);
-                    if numInliers < 12
-                        verificationCheck = false;
-                    else
-                        verificationCheck = true;
+                    if numInliers >= 12                        
                         loopClosureMatrixImageToImage(i, candidateImage) = true; 
                         matches(i) =  candidateImage;
                     end
                 catch
-                    verificationCheck = false;
+                    continue
                 end            
             end
         end
