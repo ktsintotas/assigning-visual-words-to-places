@@ -17,7 +17,7 @@ function net = GrowingNeuralGasNetwork(X, params)
         PlotFlag = false;
     end
 
-   %% Load Data
+    %% Load Data
     
     nData = size(X,1);
     nDim = size(X,2);
@@ -27,7 +27,7 @@ function net = GrowingNeuralGasNetwork(X, params)
     Xmin = min(X);
     Xmax = max(X);
 
-   %% Parameters
+    %% Parameters
 
     N = params.GNG.a;
     MaxIt = params.GNG.epsilon;
@@ -38,7 +38,7 @@ function net = GrowingNeuralGasNetwork(X, params)
     delta = params.GNG.delta;
     T = params.GNG.T;
 
-   %% Initialization
+    %% Initialization
 
     Ni = 2;
 
@@ -52,7 +52,7 @@ function net = GrowingNeuralGasNetwork(X, params)
     C = zeros(Ni, Ni);
     t = zeros(Ni, Ni);
 
-   %% Loop
+    %% Loop
 
     nx = 0;
 
@@ -141,6 +141,6 @@ function net = GrowingNeuralGasNetwork(X, params)
     net.w = w;
     net.E = E;
     net.C = C;
-    net.t = t;    
+    net.t = t;  
     
 end
