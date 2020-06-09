@@ -30,6 +30,7 @@ function placeMatches = queryingPlaces(temporalConstant, frameRate, myData, VWto
         temporalRestriction = temporalConstant * frameRate; 
         startImage = temporalRestriction + 1;
         for i = startImage : myData.imagesLoaded
+            disp(i)
             searchDatabaseDefinition = VWtoPlaces.imageToSequence(i - temporalRestriction); % searching area definition, until which place to look
             mdl = ExhaustiveSearcher(VWtoPlaces.visualWordsCollection(1: VWtoPlaces.searchingAreaDatabaseSize{searchDatabaseDefinition}, :));
             IdxNN = knnsearch(mdl, double(myData.features{i}) , 'K', 1); % k Nearest Neighbor search
@@ -41,19 +42,20 @@ function placeMatches = queryingPlaces(temporalConstant, frameRate, myData, VWto
             end
             % binomial distribution density function
             LAMDA = sum(VWtoPlaces.placeVWsCounter{searchDatabaseDefinition}); % is the sum of VWs within the searching area
-            N = size(myData.features{i}, 1); % number of descriptors in query image i        
+            N = size(myData.features{i}, 1); % number of descriptors in query image i
+            E_x = zeros(1, searchDatabaseDefinition);
             for k = 1 : searchDatabaseDefinition
                 lamda = VWtoPlaces.placeVWsNumber(k); % lamda corresponds to place’s i VWs
                 placeVotes = placeScore(k); % number of votes for place k
                 p = lamda/LAMDA;
-                E_x = N * p; 
+                E_x(k) = N * p; 
                 probability = binopdf(placeVotes, N, p);
                 binomialMatrix(i, k) = probability;
             end
             % find the minimum probability score
             [minProbability, minIndex] = min(binomialMatrix(i, 1 : searchDatabaseDefinition));
             % check if the candidate place is under the pre-defined threshold
-            if minProbability <= params.probabilityThreshold && placeVotes > E_x
+            if minProbability <= params.probabilityThreshold && placeScore(minIndex) > E_x(minIndex)
                 % IMAGE TO IMAGE ASSOCIATION 
                 mdl2 = ExhaustiveSearcher(VWtoPlaces.placeDescriptors{minIndex});
                 IdxNN2 = knnsearch(mdl2,  myData.features{i}, 'K', 1);
@@ -63,7 +65,11 @@ function placeMatches = queryingPlaces(temporalConstant, frameRate, myData, VWto
                 end
                 % the image which gathers the most matches is considered as loop closure candidate
                 [~, maxVotedImage] = max(imageScore);
-                candidateImage = VWtoPlaces.imagesInPlace(minIndex-1) + maxVotedImage;
+                if minIndex ~= 1 
+                    candidateImage = VWtoPlaces.imagesInPlace(minIndex-1) + maxVotedImage; % edited 9.6.2020
+                else 
+                    candidateImage = maxVotedImage; %%% % edited 9.6.2020
+                end 
 
                 % verification step
                 indexPairs = matchFeatures(myData.features{i}, myData.features{candidateImage}, 'Unique', true);

@@ -137,7 +137,7 @@ function VWtoPlaces = VisualWordsToPlaces(myData, params)
         VWtoPlaces.imagesInPlace = imagesInPlace;
     
         if params.VWtoPlaces.save
-            save('results/VWtoPlaces', 'VWtoPlaces');
+            save('results/VWtoPlaces', 'VWtoPlaces',  '-v7.3');
         end
     end
 end

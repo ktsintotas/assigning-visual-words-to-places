@@ -15,7 +15,7 @@
 % of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 % MIT License for more details. <https://opensource.org/licenses/MIT>
 
-%% Initially, load or compute the dataset
+% Initially, load or compute the dataset
 
 function myData = extractMyData(params, dataPath, dataFormat)
     v = params.v;
@@ -57,7 +57,7 @@ function myData = extractMyData(params, dataPath, dataFormat)
         myData.indexVector = indexVector;   
         
         if params.myData.save
-            save('results/myData', 'myData');
+            save('results/myData', 'myData',  '-v7.3');
         end
     end
 end

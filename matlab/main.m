@@ -17,8 +17,8 @@
 
 clear all; close all;
 dataPath = ('dataset_directory\'); % images' directory
-dataFormat = '*.png'; % e.g., for png input data
-dataFrameRate = 10; % dataset frame rate declaration
+dataFormat = '*.jpg'; % e.g., for png input data
+dataFrameRate = % eg., 10;  dataset frame rate declaration
 temporalConstant = 40; % search area time constant, 40 secs
 
 params = parametersInitialization(dataFrameRate);
@@ -28,6 +28,11 @@ myData = extractMyData(params, dataPath, dataFormat);
 VWtoPlaces = VisualWordsToPlaces(myData, params);
 
 placeMatches = queryingPlaces(temporalConstant, dataFrameRate, myData, VWtoPlaces, params);
+
+groundTruth = % ground truth matrix
+
+results = methodEvaluation(params, placeMatches, groundTruth);
+
 
 
 
