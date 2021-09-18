@@ -29,4 +29,4 @@ If you use this code, please cite:
 }
 ```
 ## Contact
-If you have problems or questions using this code, please contact the author (ktsintot@pme.duth.gr). Ground truth matrices for many of the used datasets are a kindly offer from Dorian Galvez-Lopez.
+If you have problems or questions using this code, please contact the author (e-mail address: ktsintot@pme.duth.gr, ktsintotas@icloud.com). Ground truth matrices for many of the used datasets are a kindly offer from Dorian Galvez-Lopez.
