@@ -14,7 +14,7 @@ The details of the algorithm are explained in the [following publication](https:
 
 **Assigning Visual Words to Places for Loop Closure Detection<br/>**
 Konstantinos A. Tsintotas, Loukas Bampis, and Antonios Gasteratos<br/>
-In proceedings of the IEEE International Conference on Robotics and Automation (ICRA), Brisbane, QLD, Australia, Pgs. 5979 - 5985 (May 2018)
+IEEE International Conference on Robotics and Automation (ICRA)
 
 If you use this code, please cite:
 
@@ -26,7 +26,7 @@ If you use this code, please cite:
   pages={5979 - 5985},
   year={2018},   
   month={May},
-  address={Brisbane, QLD, Australia}
+  address={Brisbane, QLD, Australia},
   doi={10.1109/ICRA.2018.8461146} 
 }
 ```
