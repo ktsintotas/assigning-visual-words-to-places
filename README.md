@@ -1,6 +1,10 @@
 # Assigning Visual Words to Places for Loop Closure Detection
 
-This open source MATLAB algorith presents an efficient image-to-sequence appearance-based loop closure detection method. Using a voting scheme over the on-line generated visual words and coupling the method with a probability function, the pipeline is able to accurately detect revisited places. Dynamic sequence segmentation is performed on the incoming image stream formulating “places” on the robot’s navigated path. Subsequently, the accumulated local feature descriptors are processed by a growing neural gas clustering mechanism for the corresponding visual words' generation. When new query images enter to the pipeline, the extracted descriptors assign votes to the database sequences including their nearest neighboring visual words.
+This open source MATLAB algorith presents an efficient image-to-sequence appearance-based loop closure detection method.
+Using a voting scheme over the on-line generated visual words and coupling the method with a probability function, the pipeline is able to accurately detect revisited places. 
+Dynamic sequence segmentation is performed on the incoming image stream formulating “places” on the robot’s navigated path.
+Subsequently, the accumulated local feature descriptors are processed by a growing neural gas clustering mechanism for the corresponding visual words' generation.
+When new query images enter to the pipeline, the extracted descriptors assign votes to the database sequences including their nearest neighboring visual words.
 The system uses a binomial probability density function to locate the proper candidate place and a nearest descriptor neighbor technique to identify image-to-image associations within the selected loop closing sequence. 
 Temporal and geometrical consistency checks are performed between the query and candidate image, providing a higher level of discrimination.
 
