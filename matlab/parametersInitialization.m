@@ -10,7 +10,7 @@
 % redistribute it and/or modify it under the terms of the MIT License as 
 % published by the corresponding authors 
 %  
-% Bag-of-Tracked-Words pipeline is distributed in the hope that it will be 
+% Assigning Visual Words to Places pipeline is distributed in the hope that it will be 
 % useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
 % of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 % MIT License for more details. <https://opensource.org/licenses/MIT>
@@ -24,7 +24,7 @@ function params = parametersInitialization(frameRate)
     params.GNG.delta = 0.995; % default
     params.GNG.T = 10; % Removing edges, not used
     params.GNG.a = 300; % Maximum generated visual words per place    
-    params.GNG.f = 25; % Visual words’ generation frequency
+    params.GNG.f = 25; % Visual wordsâ€™ generation frequency
     params.GNG.epsilon = 1; % Growing Neural Gas iterations
     
     % Method's general parameters
@@ -32,7 +32,7 @@ function params = parametersInitialization(frameRate)
     params.v = 300; % Maximum prominent local features per image
     params.timeConstant = 40 * frameRate; % Search area time constant   
     params.verificationInliers = 12; % Geometrical verification inliers 
-    params.temporalConsistency = 2; % Images’ temporal consistency    
+    params.temporalConsistency = 2; % Imagesâ€™ temporal consistency    
     params.probabilityThreshold = 1e-12; % Probability score threshold 
 
     params.myData.load = true;
