@@ -10,7 +10,7 @@
 % redistribute it and/or modify it under the terms of the MIT License as 
 % published by the corresponding authors 
 %  
-% Bag-of-Tracked-Words pipeline is distributed in the hope that it will be 
+% Assigning Visual Words to Places pipeline is distributed in the hope that it will be 
 % useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
 % of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 % MIT License for more details. <https://opensource.org/licenses/MIT>
@@ -45,7 +45,7 @@ function placeMatches = queryingPlaces(temporalConstant, frameRate, myData, VWto
             N = size(myData.features{i}, 1); % number of descriptors in query image i
             E_x = zeros(1, searchDatabaseDefinition);
             for k = 1 : searchDatabaseDefinition
-                lamda = VWtoPlaces.placeVWsNumber(k); % lamda corresponds to place’s i VWs
+                lamda = VWtoPlaces.placeVWsNumber(k); % lamda corresponds to placeâ€™s i VWs
                 placeVotes = placeScore(k); % number of votes for place k
                 p = lamda/LAMDA;
                 E_x(k) = N * p; 
